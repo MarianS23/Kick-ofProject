@@ -1,0 +1,35 @@
+<div 
+class="about-container"
+fxLayout="row [wrap]"
+fxLayoutAlign="space-between center "
+fxFlex.xs="100%"
+fxFlex.sm="70%"
+fxFlex.md="70%"
+fxLayout.md="row"
+fxLayoutAlign.lg="center center"
+fxLayoutAlign.md="center center"
+fxLayoutAlign.sm="center center"
+fxLayoutAlign.xs="center center"
+
+
+>
+    <ng-container *ngIf="userData; else elseTemplate">
+        <mat-card class="example-card" fxFlex.sm="40%" >
+            <img mat-card-image [src]="userData.userImg">
+        </mat-card>
+        <mat-card class="userInfo">
+            <mat-card-title style="font-size: 22px;">{{userData.firstName}} {{userData.lastName}}</mat-card-title>
+            <mat-card-subtitle style="font-size: 18px;">Position:{{userData.position}}</mat-card-subtitle>
+            <mat-card-subtitle style="font-size: 18px;">Date of birth: {{userData.birthDate | date:'MMM d, y'}}</mat-card-subtitle>
+            <mat-card-content class="mat-card-content">
+                <p class="mat-body-strong, .mat-body-2">
+                    {{userData.aboutYou}}
+                </p>
+            </mat-card-content>
+        </mat-card>
+    </ng-container>
+    <ng-template #elseTemplate>
+        <mat-card-title style="font-size: 22px;">please enter your data in "Edit" page to show info</mat-card-title>
+    </ng-template>
+</div>
+

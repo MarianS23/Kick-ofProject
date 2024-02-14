@@ -1,0 +1,75 @@
+<form 
+[formGroup]="form" 
+#formDirective="ngForm"
+(ngSubmit)="submitForm(formDirective)" 
+class="form-container"
+fxLayout="row [wrap]"
+fxLayoutAlign="space-around center"
+fxFlex.xs="100%"
+fxFlex.sm="100%"
+fxFlex.md="70%"
+fxLayout.sm="column [wrap]"
+>
+    <mat-form-field class="mat-form-field">
+        <mat-label>First Name</mat-label>
+        <input matInput formControlName="firstName">
+        <button *ngIf="form.value.firstName" matSuffix mat-icon-button aria-label="Clear"
+            (click)="resetSingleField('firstName') ">
+            <mat-icon>close</mat-icon>
+        </button>
+    </mat-form-field>
+    <mat-form-field class="mat-form-field">
+        <mat-label>Last Name</mat-label>
+        <input matInput formControlName="lastName">
+        <button *ngIf="form.value.lastName" matSuffix mat-icon-button aria-label="Clear"
+            (click)="resetSingleField('lastName') ">
+            <mat-icon>close</mat-icon>
+        </button>
+    </mat-form-field>
+    <mat-form-field class="mat-form-field">
+        <mat-label for="x">Select type</mat-label>
+        <select id="x" style="display: none;"></select>
+        <mat-select id="x" formControlName="position">
+            <mat-option value="Front-end">Front-end</mat-option>
+            <mat-option value="Back-end">Back-end</mat-option>
+            <mat-option value="Full stack">Full stack</mat-option>
+        </mat-select>
+    </mat-form-field>
+
+    <mat-form-field class="mat-form-field">
+        <mat-label>Write image URL</mat-label>
+        <input matInput type="url" formControlName="userImg">
+        <button *ngIf="form.value.userImg" matSuffix mat-icon-button aria-label="Clear"
+            (click)="resetSingleField('userImg') ">
+            <mat-icon>close</mat-icon>
+        </button>
+    </mat-form-field>
+
+    <mat-form-field class="example-form-field mat-form-field">
+        <mat-label>Choose a date</mat-label>
+        <input matInput [matDatepicker]="datepicker" formControlName="birthDate">
+        <button *ngIf="form.value.birthDate" matSuffix mat-icon-button aria-label="Clear"
+            (click)="resetSingleField('birthDate') ">
+            <mat-icon>close</mat-icon>
+        </button>
+        <mat-hint>MM/DD/YYYY</mat-hint>
+        <mat-datepicker-toggle matIconSuffix [for]="datepicker"></mat-datepicker-toggle>
+        <mat-datepicker #datepicker>
+            <mat-datepicker-actions>
+                <button mat-button matDatepickerCancel>Cancel</button>
+                <button mat-raised-button color="primary" matDatepickerApply>Apply</button>
+            </mat-datepicker-actions>
+        </mat-datepicker>
+    </mat-form-field>
+    <mat-form-field class="mat-form-field">
+        <mat-label>Tell about yourself</mat-label>
+        <textarea rows="1" matInput formControlName="aboutYou"></textarea>
+        <button *ngIf="form.value.aboutYou" matSuffix mat-icon-button aria-label="Clear"
+            (click)="resetSingleField('aboutYou') ">
+            <mat-icon>close</mat-icon>
+        </button>
+    </mat-form-field>
+    <button mat-raised-button type="submit"  class="mat-raised-button" color="primary" [disabled]="form.invalid">Submit</button>
+    <button mat-raised-button type="reset" (click)="resetForm()" class="mat-raised-button" color="warn" >Reset</button>
+    
+</form>

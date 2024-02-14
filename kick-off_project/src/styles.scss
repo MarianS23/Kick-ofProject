@@ -1,0 +1,20 @@
+/* You can add global styles to this file, and also import other style files */
+// @import "~@angular/material/prebuilt-themes/indigo-pink.css";
+// @import './app/shared/styles/theme-materials';
+@import './app/app.component.scss';
+
+* {
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+}
+
+html,
+body {
+    height: fit-content;
+    font-family: 'Montserrat', sans-serif;
+    color: black;
+    width: 80vw;
+    margin: 0 auto;
+    overflow-x: hidden;
+}

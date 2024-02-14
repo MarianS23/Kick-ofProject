@@ -1,0 +1,53 @@
+.example-card {
+    max-width: 300px;
+  }
+  
+  .example-header-image {
+    background-size: cover;
+  }
+
+.about-container{
+    // display: flex;
+    // flex-direction: row;
+    // justify-content: space-between;
+    margin: 40px auto 0;
+    .userInfo{
+        padding: 40px;
+        max-width: 70%;
+        mat-card-subtitle{
+          margin: 10px 0;
+        }
+        mat-card-content{
+          margin-top: 20px;
+          padding: 0;
+        }
+    }
+}
+
+@media screen and (max-width:1250px){
+  .mat-mdc-card{
+    box-shadow: none;
+  }
+  // .example-card{
+  //   max-width: 200px;
+  // }
+}
+
+// @media screen and (max-width:910px){
+//   .mat-mdc-card{
+//     box-shadow: none;
+//   }
+//   .about-container{
+//     flex-direction: column;
+//     width: fit-content;
+//     .userInfo{
+//       max-width: 300px;
+//       border: none;
+//     }
+//     .example-card{
+//       border: none;
+//     }
+//   }
+// }
+
+ 
